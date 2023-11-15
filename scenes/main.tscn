@@ -1,0 +1,270 @@
+[gd_scene load_steps=3 format=3 uid="uid://oauyryghxiui"]
+
+[ext_resource type="Texture2D" uid="uid://dhhwiubpxvko1" path="res://resources/backgrounds/cover.png" id="1_0x0rp"]
+[ext_resource type="Script" path="res://nova/sources/scripts/ui/i18n/I18nText.cs" id="2_o71dd"]
+
+[node name="Main" type="Node2D"]
+
+[node name="UI" type="Node" parent="."]
+
+[node name="MainUI" type="Node" parent="UI"]
+
+[node name="TitleView" type="Control" parent="UI/MainUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="TitlePanel" type="Control" parent="UI/MainUI/TitleView"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="UI/MainUI/TitleView/TitlePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0x0rp")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="Control" parent="UI/MainUI/TitleView/TitlePanel"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -306.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="StartGame" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -292.0
+offset_right = -14.0
+offset_bottom = -214.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="I18nText" type="Control" parent="UI/MainUI/TitleView/TitlePanel/Menu/StartGame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_o71dd")
+
+[node name="Label" type="Label" parent="UI/MainUI/TitleView/TitlePanel/Menu/StartGame/I18nText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoadGame" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -190.0
+offset_right = -14.0
+offset_bottom = -112.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="I18nText" type="Control" parent="UI/MainUI/TitleView/TitlePanel/Menu/LoadGame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_o71dd")
+
+[node name="Label" type="Label" parent="UI/MainUI/TitleView/TitlePanel/Menu/LoadGame/I18nText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Load Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ImageGallery" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -81.0
+offset_right = -14.0
+offset_bottom = -3.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="I18nText" type="Control" parent="UI/MainUI/TitleView/TitlePanel/Menu/ImageGallery"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_o71dd")
+
+[node name="Label" type="Label" parent="UI/MainUI/TitleView/TitlePanel/Menu/ImageGallery/I18nText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Image Gallery"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicGallery" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = 22.0
+offset_right = -14.0
+offset_bottom = 100.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="I18nText" type="Control" parent="UI/MainUI/TitleView/TitlePanel/Menu/MusicGallery"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_o71dd")
+
+[node name="Label" type="Label" parent="UI/MainUI/TitleView/TitlePanel/Menu/MusicGallery/I18nText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Music Gallery"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Config" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = 127.0
+offset_right = -14.0
+offset_bottom = 205.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="I18nText" type="Control" parent="UI/MainUI/TitleView/TitlePanel/Menu/Config"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_o71dd")
+
+[node name="Label" type="Label" parent="UI/MainUI/TitleView/TitlePanel/Menu/Config/I18nText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Config"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = 227.0
+offset_right = -14.0
+offset_bottom = 305.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="I18nText" type="Control" parent="UI/MainUI/TitleView/TitlePanel/Menu/Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_o71dd")
+
+[node name="Label" type="Label" parent="UI/MainUI/TitleView/TitlePanel/Menu/Quit/I18nText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
