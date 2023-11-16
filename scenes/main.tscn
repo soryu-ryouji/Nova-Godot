@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://oauyryghxiui"]
+[gd_scene load_steps=6 format=3 uid="uid://oauyryghxiui"]
 
 [ext_resource type="Texture2D" uid="uid://dhhwiubpxvko1" path="res://resources/backgrounds/cover.png" id="1_0x0rp"]
 [ext_resource type="Script" path="res://nova/sources/scripts/ui/i18n/I18nText.cs" id="2_o71dd"]
+[ext_resource type="Script" path="res://nova/sources/scripts/controllers/AudioController.cs" id="3_8vgdl"]
+[ext_resource type="Script" path="res://nova/sources/scripts/ui/UISound.cs" id="3_701gx"]
+[ext_resource type="Script" path="res://nova/sources/scripts/manager/AudioManager.cs" id="4_elftm"]
 
 [node name="Main" type="Node2D"]
 
@@ -47,7 +50,7 @@ offset_left = -306.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="StartGame" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu"]
+[node name="StartGame" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu" node_paths=PackedStringArray("audioManager")]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -60,6 +63,9 @@ offset_right = -14.0
 offset_bottom = -214.0
 grow_horizontal = 0
 grow_vertical = 2
+script = ExtResource("3_701gx")
+audioName = "hover.ogg"
+audioManager = NodePath("../../../../../../AudioManager")
 
 [node name="I18nText" type="Control" parent="UI/MainUI/TitleView/TitlePanel/Menu/StartGame"]
 layout_mode = 1
@@ -84,7 +90,7 @@ text = "Start Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LoadGame" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu"]
+[node name="LoadGame" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu" node_paths=PackedStringArray("audioManager")]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -97,6 +103,9 @@ offset_right = -14.0
 offset_bottom = -112.0
 grow_horizontal = 0
 grow_vertical = 2
+script = ExtResource("3_701gx")
+audioName = "hover.ogg"
+audioManager = NodePath("../../../../../../AudioManager")
 
 [node name="I18nText" type="Control" parent="UI/MainUI/TitleView/TitlePanel/Menu/LoadGame"]
 layout_mode = 1
@@ -121,7 +130,7 @@ text = "Load Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ImageGallery" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu"]
+[node name="ImageGallery" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu" node_paths=PackedStringArray("audioManager")]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -134,6 +143,9 @@ offset_right = -14.0
 offset_bottom = -3.0
 grow_horizontal = 0
 grow_vertical = 2
+script = ExtResource("3_701gx")
+audioName = "hover.ogg"
+audioManager = NodePath("../../../../../../AudioManager")
 
 [node name="I18nText" type="Control" parent="UI/MainUI/TitleView/TitlePanel/Menu/ImageGallery"]
 layout_mode = 1
@@ -158,7 +170,7 @@ text = "Image Gallery"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MusicGallery" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu"]
+[node name="MusicGallery" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu" node_paths=PackedStringArray("audioManager")]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -171,6 +183,9 @@ offset_right = -14.0
 offset_bottom = 100.0
 grow_horizontal = 0
 grow_vertical = 2
+script = ExtResource("3_701gx")
+audioName = "hover.ogg"
+audioManager = NodePath("../../../../../../AudioManager")
 
 [node name="I18nText" type="Control" parent="UI/MainUI/TitleView/TitlePanel/Menu/MusicGallery"]
 layout_mode = 1
@@ -195,7 +210,7 @@ text = "Music Gallery"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Config" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu"]
+[node name="Config" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu" node_paths=PackedStringArray("audioManager")]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -208,6 +223,9 @@ offset_right = -14.0
 offset_bottom = 205.0
 grow_horizontal = 0
 grow_vertical = 2
+script = ExtResource("3_701gx")
+audioName = "hover.ogg"
+audioManager = NodePath("../../../../../../AudioManager")
 
 [node name="I18nText" type="Control" parent="UI/MainUI/TitleView/TitlePanel/Menu/Config"]
 layout_mode = 1
@@ -232,7 +250,7 @@ text = "Config"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Quit" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu"]
+[node name="Quit" type="Button" parent="UI/MainUI/TitleView/TitlePanel/Menu" node_paths=PackedStringArray("audioManager")]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -245,6 +263,9 @@ offset_right = -14.0
 offset_bottom = 305.0
 grow_horizontal = 0
 grow_vertical = 2
+script = ExtResource("3_701gx")
+audioName = "hover.ogg"
+audioManager = NodePath("../../../../../../AudioManager")
 
 [node name="I18nText" type="Control" parent="UI/MainUI/TitleView/TitlePanel/Menu/Quit"]
 layout_mode = 1
@@ -268,3 +289,24 @@ grow_vertical = 2
 text = "Quit"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioManager" type="Node" parent="."]
+script = ExtResource("4_elftm")
+
+[node name="BGM" type="Node" parent="AudioManager"]
+script = ExtResource("3_8vgdl")
+AudioFolder = "bgm"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioManager/BGM"]
+
+[node name="BGS" type="Node" parent="AudioManager"]
+script = ExtResource("3_8vgdl")
+AudioFolder = "sounds"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioManager/BGS"]
+
+[node name="UISound" type="Node" parent="AudioManager"]
+script = ExtResource("3_8vgdl")
+AudioFolder = "sounds"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioManager/UISound"]
