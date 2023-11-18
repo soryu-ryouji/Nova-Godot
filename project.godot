@@ -18,3 +18,8 @@ config/icon="res://icon.svg"
 [dotnet]
 
 project/assembly_name="Nova-Godot"
+
+[filesystem]
+
+import/blender/enabled=false
+import/fbx/enabled=false
