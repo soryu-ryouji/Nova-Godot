@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://oauyryghxiui"]
+[gd_scene load_steps=9 format=3 uid="uid://oauyryghxiui"]
 
 [ext_resource type="Texture2D" uid="uid://dhhwiubpxvko1" path="res://resources/backgrounds/cover.png" id="1_0x0rp"]
 [ext_resource type="Script" path="res://nova/sources/scripts/ui/i18n/I18nText.cs" id="2_o71dd"]
 [ext_resource type="Script" path="res://nova/sources/scripts/controllers/AudioController.cs" id="3_8vgdl"]
 [ext_resource type="Script" path="res://nova/sources/scripts/ui/UISound.cs" id="3_701gx"]
 [ext_resource type="Script" path="res://nova/sources/scripts/manager/AudioManager.cs" id="4_elftm"]
+[ext_resource type="Script" path="res://nova/sources/scripts/ui/button_ring/ButtonRing.cs" id="4_u7k13"]
+[ext_resource type="Script" path="res://nova/sources/scripts/RealInput.cs" id="7_g0vwl"]
+[ext_resource type="Script" path="res://nova/sources/scripts/GameViewInput.cs" id="8_om62l"]
 
 [node name="Main" type="Node2D"]
 
@@ -290,6 +293,64 @@ text = "Quit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="PostUI" type="Node" parent="UI"]
+
+[node name="AfterMainUI" type="Control" parent="UI/PostUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonRing" type="Control" parent="UI/PostUI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_u7k13")
+
+[node name="BackgroundBlur" type="Control" parent="UI/PostUI/ButtonRing"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/PostUI/ButtonRing/BackgroundBlur"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Ring" type="Control" parent="UI/PostUI/ButtonRing"]
+anchors_preset = 0
+offset_right = 150.0
+offset_bottom = 150.0
+pivot_offset = Vector2(75, 75)
+
+[node name="TextureRect" type="TextureRect" parent="UI/PostUI/ButtonRing/Ring"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UI/PostUI/ButtonRing/Ring"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+
 [node name="AudioManager" type="Node" parent="."]
 script = ExtResource("4_elftm")
 
@@ -310,3 +371,10 @@ script = ExtResource("3_8vgdl")
 AudioFolder = "sounds"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioManager/UISound"]
+
+[node name="RealInput" type="Node" parent="."]
+script = ExtResource("7_g0vwl")
+
+[node name="GameViewInput" type="Node" parent="." node_paths=PackedStringArray("buttonRing")]
+script = ExtResource("8_om62l")
+buttonRing = NodePath("../UI/PostUI/ButtonRing")

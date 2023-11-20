@@ -23,11 +23,11 @@ public partial class AudioManager : Node
 
         if (bgmController != null || bgsController != null || uiSoundController != null)
         {
-            GD.Print("AudioManager: init success");
+            Debug.Log("AudioManager: init success");
         }
         else
         {
-            GD.PrintErr("AudioManager init failed");
+            Debug.LogErr("AudioManager init failed");
         }
 	}
 

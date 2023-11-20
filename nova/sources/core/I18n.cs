@@ -64,7 +64,7 @@ public static class I18n
         }
         catch (Exception e)
         {
-            GD.Print($"Nova: Failed to get CurrentUICulture.\n{e.Message}");
+            Debug.LogErr($"Nova: Failed to get CurrentUICulture.\n{e.Message}");
         }
 
         return SystemLanguage.ChineseSimplified;
@@ -106,7 +106,7 @@ public static class I18n
             {
                 if (formats.Length == 0)
                 {
-                    GD.Print($"Nova: Empty translation string list for: {key}");
+                    Debug.Log($"Nova: Empty translation string list for: {key}");
                 }
                 else if (args.Length == 0)
                 {
@@ -124,7 +124,7 @@ public static class I18n
             }
             else
             {
-                GD.Print($"Nova: Invalid translation format for: {key}");
+                Debug.Log($"Nova: Invalid translation format for: {key}");
             }
 
             if (args.Length > 0)
@@ -134,7 +134,7 @@ public static class I18n
         }
         else
         {
-            GD.Print($"Nova: Missing translation for: {key}");
+            Debug.Log($"Nova: Missing translation for: {key}");
         }
 
         return translation;
