@@ -1,22 +1,42 @@
-[gd_scene load_steps=9 format=3 uid="uid://oauyryghxiui"]
+[gd_scene load_steps=11 format=3 uid="uid://oauyryghxiui"]
 
 [ext_resource type="Texture2D" uid="uid://dhhwiubpxvko1" path="res://resources/backgrounds/cover.png" id="1_0x0rp"]
 [ext_resource type="Script" path="res://nova/sources/scripts/ui/i18n/I18nText.cs" id="2_o71dd"]
 [ext_resource type="Script" path="res://nova/sources/scripts/controllers/AudioController.cs" id="3_8vgdl"]
 [ext_resource type="Script" path="res://nova/sources/scripts/ui/UISound.cs" id="3_701gx"]
+[ext_resource type="Texture2D" uid="uid://e7j7rynrw3fv" path="res://nova/ui/sprites/background/grey_background.png" id="4_7li36"]
 [ext_resource type="Script" path="res://nova/sources/scripts/manager/AudioManager.cs" id="4_elftm"]
 [ext_resource type="Script" path="res://nova/sources/scripts/ui/button_ring/ButtonRing.cs" id="4_u7k13"]
+[ext_resource type="Texture2D" uid="uid://urcvr2og5kji" path="res://nova/ui/sprites/background/white_background.png" id="5_uogab"]
 [ext_resource type="Script" path="res://nova/sources/scripts/RealInput.cs" id="7_g0vwl"]
 [ext_resource type="Script" path="res://nova/sources/scripts/GameViewInput.cs" id="8_om62l"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="UI" type="Node" parent="."]
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="MainUI" type="Node" parent="UI"]
+[node name="MainUI" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TitleView" type="Control" parent="UI/MainUI"]
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -293,13 +313,698 @@ text = "Quit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ConfigView" type="Control" parent="UI/MainUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ConfigPanel" type="Control" parent="UI/MainUI/ConfigView"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="UI/MainUI/ConfigView/ConfigPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_7li36")
+expand_mode = 1
+
+[node name="Tabs" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GeneralPanel" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftPanel" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_top = -344.0
+offset_right = 605.0
+offset_bottom = 128.0
+grow_vertical = 2
+
+[node name="Options" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DisplayTitle" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_right = 250.0
+offset_bottom = 55.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/DisplayTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_uogab")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/DisplayTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Display"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Language" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 76.0
+offset_right = 250.0
+offset_bottom = 126.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/Language"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 75.0
+offset_bottom = 13.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Language"
+
+[node name="OptionButton" type="OptionButton" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/Language"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -16.5
+offset_bottom = 16.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+item_count = 2
+popup/item_0/text = "Chinese"
+popup/item_0/id = 0
+popup/item_1/text = "English"
+popup/item_1/id = 1
+
+[node name="FullScreen" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 144.0
+offset_right = 250.0
+offset_bottom = 175.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/FullScreen"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 84.0
+offset_bottom = 13.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Full Screen"
+
+[node name="CheckButton" type="CheckBox" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/FullScreen"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -12.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ButtonRingSize" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -249.0
+offset_top = 191.0
+offset_right = 251.0
+offset_bottom = 243.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/ButtonRingSize"]
+layout_mode = 2
+offset_top = 13.0
+offset_right = 126.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Button Ring Size"
+
+[node name="HSlider" type="HSlider" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/ButtonRingSize"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -254.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ControlTitle" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -185.0
+offset_right = 250.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/ControlTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_uogab")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/ControlTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Control"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClickStop" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -105.0
+offset_right = 250.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ClickStopAnimation" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/ClickStop"]
+anchors_preset = 0
+offset_right = 240.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/ClickStop/ClickStopAnimation"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 160.0
+offset_bottom = 13.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Click Stop Animation"
+
+[node name="CheckBox" type="CheckBox" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/ClickStop/ClickStopAnimation"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ClickStopVoice" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/ClickStop"]
+anchors_preset = 0
+offset_left = 258.0
+offset_right = 498.0
+offset_bottom = 41.0
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/ClickStop/ClickStopVoice"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 121.0
+offset_bottom = 13.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Click Stop Voice"
+
+[node name="CheckBox" type="CheckBox" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/ClickStop/ClickStopVoice"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="FastForwardUnread" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/ClickStop"]
+anchors_preset = 0
+offset_top = 41.0
+offset_right = 240.0
+offset_bottom = 81.0
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/ClickStop/FastForwardUnread"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 163.0
+offset_bottom = 13.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Fast Forward Unread"
+
+[node name="CheckBox" type="CheckBox" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/LeftPanel/Options/ClickStop/FastForwardUnread"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="RightPanel" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -587.0
+offset_top = -344.0
+offset_right = -45.0
+offset_bottom = 195.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="DialogueTitle" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_right = 250.0
+offset_bottom = 55.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel/DialogueTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_uogab")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel/DialogueTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Dialogue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogueOpacity" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 76.0
+offset_right = 250.0
+offset_bottom = 126.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel/DialogueOpacity"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 132.0
+offset_bottom = 13.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Dialogue Opacity"
+
+[node name="HSlider" type="HSlider" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel/DialogueOpacity"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="FontSize" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 130.0
+offset_right = 250.0
+offset_bottom = 180.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel/FontSize"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 132.0
+offset_bottom = 13.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Font Size"
+
+[node name="HSlider" type="HSlider" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel/FontSize"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextSpeed" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 180.0
+offset_right = 250.0
+offset_bottom = 230.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel/TextSpeed"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 132.0
+offset_bottom = 13.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Text Speed"
+
+[node name="HSlider" type="HSlider" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel/TextSpeed"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="AudoSpeed" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 230.0
+offset_right = 250.0
+offset_bottom = 280.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel/AudoSpeed"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 132.0
+offset_bottom = 13.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Auto Speed"
+
+[node name="HSlider" type="HSlider" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel/AudoSpeed"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextPreviewPanel" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -255.0
+offset_top = -195.0
+offset_right = 245.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel/TextPreviewPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_uogab")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/RightPanel/TextPreviewPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 10.0
+offset_right = -13.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "This is a test sentence"
+
+[node name="ResetButtons" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel"]
+anchors_preset = 0
+offset_left = 80.0
+offset_top = 524.0
+offset_right = 562.0
+offset_bottom = 572.0
+
+[node name="ResetAlerts" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/ResetButtons"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 189.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/ResetButtons/ResetAlerts"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Reset Alerts"
+
+[node name="ResetDefault" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/ResetButtons"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -189.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/GeneralPanel/ResetButtons/ResetDefault"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Reset Default"
+
+[node name="VolumePanel" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Common" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel"]
+anchors_preset = 0
+offset_left = 81.0
+offset_top = 674.0
+offset_right = 1277.0
+offset_bottom = 740.0
+
+[node name="LeftLabels" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Common"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 331.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="General" type="Button" parent="UI/MainUI/ConfigView/ConfigPanel/Common/LeftLabels"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 40.0
+text = "General"
+
+[node name="Volume" type="Button" parent="UI/MainUI/ConfigView/ConfigPanel/Common/LeftLabels"]
+layout_mode = 0
+offset_left = 113.0
+offset_right = 213.0
+offset_bottom = 40.0
+text = "Volume"
+
+[node name="Shortcut" type="Button" parent="UI/MainUI/ConfigView/ConfigPanel/Common/LeftLabels"]
+layout_mode = 0
+offset_left = 231.0
+offset_right = 331.0
+offset_bottom = 40.0
+text = "Shortcut"
+
+[node name="RightLabels" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Common"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ReturnTitle" type="Button" parent="UI/MainUI/ConfigView/ConfigPanel/Common/RightLabels"]
+layout_mode = 1
+offset_right = 100.0
+offset_bottom = 40.0
+text = "Title"
+
 [node name="PostUI" type="Node" parent="UI"]
 
 [node name="AfterMainUI" type="Control" parent="UI/PostUI"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 26.0
+offset_top = 279.0
+offset_right = 508.0
+offset_bottom = 319.0
 
 [node name="ButtonRing" type="Control" parent="UI/PostUI"]
 visible = false
