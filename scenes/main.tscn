@@ -314,7 +314,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ConfigView" type="Control" parent="UI/MainUI"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -323,6 +322,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ConfigPanel" type="Control" parent="UI/MainUI/ConfigView"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -936,9 +936,416 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Reset Default"
 
 [node name="VolumePanel" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftPanel" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_top = -344.0
+offset_right = 605.0
+offset_bottom = 128.0
+grow_vertical = 2
+
+[node name="Options" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VolumeTitle" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_right = 250.0
+offset_bottom = 55.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options/VolumeTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_uogab")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options/VolumeTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GlobalVolume" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 76.0
+offset_right = 250.0
+offset_bottom = 131.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options/GlobalVolume"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 113.0
+offset_bottom = 13.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Global Volume"
+
+[node name="HSlider" type="HSlider" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options/GlobalVolume"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = -7.5
+offset_bottom = 8.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Voice" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 142.0
+offset_right = 250.0
+offset_bottom = 197.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options/Voice"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 113.0
+offset_bottom = 13.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Voice"
+
+[node name="HSlider" type="HSlider" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options/Voice"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = -7.5
+offset_bottom = 8.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="BGM" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 204.0
+offset_right = 250.0
+offset_bottom = 259.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options/BGM"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 113.0
+offset_bottom = 13.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Background Music"
+
+[node name="HSlider" type="HSlider" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options/BGM"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = -7.5
+offset_bottom = 8.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="SoundEffect" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 268.0
+offset_right = 250.0
+offset_bottom = 323.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options/SoundEffect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 113.0
+offset_bottom = 13.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Sound Effect"
+
+[node name="HSlider" type="HSlider" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options/SoundEffect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = -7.5
+offset_bottom = 8.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="SystemSound" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 323.0
+offset_right = 250.0
+offset_bottom = 378.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options/SystemSound"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 113.0
+offset_bottom = 13.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "SystemSound"
+
+[node name="HSlider" type="HSlider" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/VolumePanel/LeftPanel/Options/SystemSound"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = -7.5
+offset_bottom = 8.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ShortcutPanel" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftPanel" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/ShortcutPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_top = -344.0
+offset_right = 655.0
+offset_bottom = 256.0
+grow_vertical = 2
+
+[node name="ActionTitle" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/ShortcutPanel/LeftPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_right = 275.0
+offset_bottom = 50.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/ShortcutPanel/LeftPanel/ActionTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_uogab")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/ShortcutPanel/LeftPanel/ActionTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Action"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActionList" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/ShortcutPanel/LeftPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -275.0
+offset_top = -510.0
+offset_right = 275.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ItemList" type="ItemList" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/ShortcutPanel/LeftPanel/ActionList"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RightPanel" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/ShortcutPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 688.0
+offset_top = -344.0
+offset_right = 1288.0
+offset_bottom = 256.0
+grow_vertical = 2
+
+[node name="ActionTitle" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/ShortcutPanel/RightPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_right = 275.0
+offset_bottom = 55.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/ShortcutPanel/RightPanel/ActionTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_uogab")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/ShortcutPanel/RightPanel/ActionTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Shortcut"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/ShortcutPanel/RightPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -275.0
+offset_top = -60.0
+offset_right = 275.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Add" type="Button" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/ShortcutPanel/RightPanel/Buttons"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -30.0
+offset_right = 270.0
+offset_bottom = 30.0
+grow_vertical = 2
+text = "Add"
+
+[node name="Reset" type="Button" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/ShortcutPanel/RightPanel/Buttons"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -30.0
+offset_right = -5.0
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Reset"
+
+[node name="ShortcutList" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 30.0
+offset_top = 131.0
+offset_right = 580.0
+offset_bottom = 550.0
+grow_horizontal = 2
+
+[node name="ItemList" type="ItemList" parent="UI/MainUI/ConfigView/ConfigPanel/Tabs/ShortcutList"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Common" type="Control" parent="UI/MainUI/ConfigView/ConfigPanel"]
 anchors_preset = 0
